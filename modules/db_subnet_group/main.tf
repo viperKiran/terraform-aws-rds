@@ -11,5 +11,8 @@ resource "aws_db_subnet_group" "this" {
       "Name" = format("%s", var.identifier)
     },
   )
+  lifecycle {
+    ignore_changes = [name_prefix]
+  }
 }
 
